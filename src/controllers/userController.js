@@ -1,7 +1,7 @@
 const userModel = require("../models/userModel");
 const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken");
-const SECRET_KEY = process.env.SECRET_KEY;
+const SECRET_KEY = "POSTAPI";
 const signup = async(req,res)=>{
     //exiting user check
     //hashed password

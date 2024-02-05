@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const SECRET_KEY =process.env.SECRET_KEY;
+const SECRET_KEY ="POSTAPI";
 const auth = (req,res,next)=>{
     try {
         let token = req.headers.authorization;
@@ -8,7 +8,7 @@ const auth = (req,res,next)=>{
             let user = jwt.verify(token,SECRET_KEY);
             req.userId = user.id;
         }else{
-            return res.status(401).json({message:"Unathorized user"})
+           return res.status(401).json({message:"Unathorized user"})
         }
         next();
     } catch (error) {
